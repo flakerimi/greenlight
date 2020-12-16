@@ -1,0 +1,42 @@
+<%= form_with(model: class_meeting, local: true) do |form| %>
+  <% if class_meeting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(class_meeting.errors.count, "error") %> prohibited this class_meeting from being saved:</h2>
+
+      <ul>
+      <% class_meeting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :student_id %>
+  <%= form.collection_select( :studen_id, User.all, :id, :name, include_blank: true ) -%>
+  </div>
+
+  <div class="field">
+    <%= form.label :teacher_id %>
+  <%= form.collection_select( :teacher_id, User.all, :id, :name, include_blank: true ) -%>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_time %>
+    <%= form.datetime_select :start_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_time %>
+    <%= form.datetime_select :end_time %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

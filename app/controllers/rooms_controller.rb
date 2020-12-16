@@ -93,6 +93,7 @@ class RoomsController < ApplicationController
   def cant_create_rooms
     return redirect_to root_path unless current_user
     shared_rooms = current_user.shared_rooms
+      @class_meetings = current_user.class_meetings
 
     if current_user.shared_rooms.empty?
       # Render view for users that cant create rooms

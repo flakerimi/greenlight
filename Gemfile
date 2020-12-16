@@ -79,10 +79,11 @@ gem 'cancancan', '~> 2.0'
 # Active Storage gems
 gem 'aws-sdk-s3', '~> 1.75'
 gem 'google-cloud-storage', '~> 1.26'
+gem "simple_calendar", "~> 2.0"
 
 group :production do
   # Use a postgres database in production.
-  gem 'pg', '~> 0.18'
+  #gem 'pg', '~> 0.18'
   gem 'sequel'
 
   # For a better logging library in production

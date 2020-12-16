@@ -1,0 +1,23 @@
+<div class="container pt-6">
+  <%= render "shared/components/subtitle", subtitle: t("administrator.title"), search: false %>
+  <p id="notice"><%= notice %></p>
+  <div class="row">
+    <div class="col-lg-3 mb-4">
+      <%= render "admins/components/menu_buttons" %>
+    </div>
+    <div id="users" class="col-lg-9">
+      <h1>Classes</h1>
+      <%= month_calendar(events: @class_meetings) do |date, meetings| %>
+        <%= date %>
+        <% meetings.each do |meeting| %>
+          <div>
+           <a href="#"> <%= meeting.name %></a>
+            <%= meeting.student_id %>
+            <%= meeting.teacher_id %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= link_to 'New Class Meeting', new_class_meeting_path %>

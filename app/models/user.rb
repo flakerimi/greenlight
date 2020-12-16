@@ -28,6 +28,7 @@ class User < ApplicationRecord
   before_destroy :destroy_rooms
 
   has_many :rooms
+  has_many :class_meetings, foreign_key: 'student_id'
   has_many :shared_access
   belongs_to :main_room, class_name: 'Room', foreign_key: :room_id, required: false
 
@@ -97,6 +98,8 @@ class User < ApplicationRecord
 
   # Returns a list of rooms ordered by last session (with nil rooms last)
   def ordered_rooms
+    return [] if main_room.nil?
+
     [main_room] + rooms.where.not(id: main_room.id).order(Arel.sql("last_session IS NULL, last_session desc"))
   end
 

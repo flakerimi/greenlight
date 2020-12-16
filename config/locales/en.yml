@@ -297,6 +297,7 @@ en:
       account_settings: Organization
       help: Need help?
       home: Home
+      class_meetings: Classes
       settings: Profile
       signout: Sign out
   home_room: Home Room
@@ -315,7 +316,7 @@ en:
       start: Start searching...
   landing:
     about: "%{href} is a simple front-end for your BigBlueButton open-source web conferencing server. You can create your own rooms to host sessions, or join others using a short and convenient link."
-    welcome: Welcome to BigBlueButton.
+    welcome: Welcome to Siera.
     video: Watch our tutorial on using Greenlight
     upgrade: Show me how to upgrade to 2.0!
     version: We've released a new version of Greenlight, but your database isn't compatible.
@@ -579,6 +580,7 @@ en:
     shared_access_success: Room shared successfully
     shared_access_error: There was an error sharing the room
     start: Start
+    search: Search for room…
     unavailable: This room is currently unavailable due to the owner's email not being verified.
     update_settings_error: There was an error updating the room settings
     update_settings_success: Room settings successfully updated
@@ -587,7 +589,7 @@ en:
       auto: You will automatically join when the meeting starts.
   settings:
     account:
-      fullname: Full name
+      fullname: Full Name
       language: Language
       provider: Provider
       image: Image

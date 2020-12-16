@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @class_meeting.name %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @class_meeting.student_id %>
+</p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= @class_meeting.teacher_id %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @class_meeting.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @class_meeting.end_time %>
+</p>
+
+<%= link_to 'Edit', edit_class_meeting_path(@class_meeting) %> |
+<%= link_to 'Back', class_meetings_path %>
